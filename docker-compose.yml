@@ -1,0 +1,35 @@
+version: "3.3"
+networks:
+  xml_parser_network:
+
+services:
+  postgres_latest:
+    image: postgres:latest
+    environment:
+      POSTGRES_DB: xml_parser_db
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: toor
+    ports:
+      - 5432:5432
+    networks:
+      - xml_parser_network
+
+  debian_php_74:
+    build: .
+    ports:
+      - 80:80
+    volumes:
+      - .:/var/www/html/xml_parser
+      - ./docker/vhost/000-default.conf:/etc/apache2/sites-enabled/000-default.conf
+    extra_hosts:
+      - "xml_parser.test:127.0.0.1"
+    environment:
+      - DB_TYPE=pgsql
+      - DB_CHARSET=utf8
+      - DB_HOST=postgres_latest_db
+      - DB_NAME=xml_parser
+      - DB_USER=root
+      - DB_PASS=toor
+      - URL=http://xml_parser.test
+    networks:
+      - xml_parser_network

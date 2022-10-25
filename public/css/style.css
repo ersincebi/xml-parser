@@ -1,0 +1,76 @@
+nav {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    display: block;
+    padding: 15px 25px;
+    text-align: center;
+    background-color: rgb(189, 185, 185);
+    color: #464141;
+    margin: 0;
+    font-family: sans-serif;
+}
+
+nav a:hover {
+    background-color: #777777;
+    color: #ffffff;
+}
+
+#search-bar {
+    background-image: url('/public/images/searchicon.png');
+    background-position: 10px 12px;
+    background-repeat: no-repeat;
+    width: 90%;
+    font-size: 16px;
+    padding: 12px 20px 12px 40px;
+    border: 1px solid #ddd;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+#data-table {
+    border-collapse: collapse;
+    width: 100%;
+    border: 1px solid #ddd;
+    font-size: 18px;
+}
+
+#data-table th, #data-table td {
+    text-align: left;
+    padding: 12px;
+}
+
+#data-table th:nth-child(1) {
+    width:60%;
+}
+
+#data-table th:nth-child(2) {
+    width:40%;
+}
+
+#data-table tr {
+    border-bottom: 1px solid #ddd;
+}
+
+#data-table tr.header, #data-table tr:hover {
+    background-color: #f1f1f1;
+}
+
+.row-animate {
+    position: relative;
+    -webkit-animation: normal;
+    -webkit-animation-name: animate;
+    -webkit-animation-duration: 1s;
+}
+
+@-webkit-keyframes animate {
+    0% {
+        left: 0;
+    }
+    100% {
+        left: 100%;
+    }
+}
