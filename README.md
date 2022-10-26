@@ -23,7 +23,7 @@ Implementation of the application made with the pure php7.4, html5, css and js
 - 
 
 #### Requests
-The routes available are for the api part:
+The routes available:
 
 | Method | Route                |Parameters| Action                                                         |
 |--------|----------------------|---------------------------|----------------------------------------------------------------|
